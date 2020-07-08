@@ -34,10 +34,10 @@ class App extends Component {
   };
 
   // Delete Todo from list
-  delTodo = id => {
-    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`).then(res =>
+  delTodo = title => {
+    axios.delete(`https://jsonplaceholder.typicode.com/todos/${title}`).then(res =>
       this.setState({
-        todos: [...this.state.todos.filter(todo => todo.id !== id)]
+        todos: [...this.state.todos.filter(todo => todo.title !== title)]
       })
     );
   };
